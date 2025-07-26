@@ -105,6 +105,8 @@ class FileLayer(LayerChainItem):
         self.pending = b''
 
         self.filename = fileName
+        self.filename = str(self.filename).replace(":", "_")
+        
         self.fd: BufferedIOBase = None
 
     def sendBytes(self, data: bytes):
