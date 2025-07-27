@@ -104,6 +104,7 @@ class PCAPConverter(Converter):
             "src": stream.client,
             "dst": stream.server
         })
+        sessionID = sessionID.replace(":", "_")
 
         handler, _ = createHandler(self.format, self.outputPrefix + sessionID)
         replayer = RDPReplayer(handler, self.outputPrefix, sessionID)
